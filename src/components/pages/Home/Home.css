@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.home-container {
+  overflow-x: hidden;
+  word-spacing: 5px;
+  perspective: 10px;
+  will-change: transform;
+}
+.last-page {
+  position: relative;
+  height: 100%;
+  width: 105vw;
+  background: linear-gradient(
+    to bottom,
+    black 30%,
+    red 70%,
+    rgb(255, 81, 0) 80%,
+    rgb(255, 196, 0) 90%
+  );
+  z-index: 10;
+}
+.heading-cover {
+  background-color: rgb(0, 0, 0);
+  width: 890px;
+  height: 100px;
+  transform-origin: right;
+  z-index: 10;
+}
+.main-info {
+  position: relative;
+}
+.main-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+  background-color: rgb(0, 0, 0);
+  transform: translate(19rem, -26.5rem);
+  z-index: 5;
+}
+.main-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 70%;
+  background-color: rgb(0, 0, 0);
+  transform: translate(19rem, 4.9rem);
+  z-index: 5;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+}
+.destinations {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translate(46rem, -4.5rem);
+  animation-name: roulette;
+  animation-duration: 1.9s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes roulette {
+  0% {
+    transform: translate(46rem, -4.1rem);
+  }
+  50% {
+    transform: translate(46rem, -15.9rem);
+  }
+  100% {
+    transform: translate(46rem, -27.5rem);
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 20;
+  }
+  .main-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-info h2 {
+    position: relative;
+    margin-top: 9rem;
+    transform: translate(20px, -0.5rem);
+    font-size: 2.5rem;
+    z-index: 20;
+  }
+  .heading-cover {
+    display: none;
+  }
+  .main-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 290px;
+    background-color: rgb(0, 0, 0);
+    transform: translateY(-3.9rem);
+    z-index: 15;
+  }
+  .main-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 240px;
+    background-color: black;
+    transform: translateY(16.9rem);
+    z-index: 15;
+  }
+  .destinations {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    gap: 20px;
+    transform: translate(21px, -11rem);
+    animation-name: mini-roulette;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes mini-roulette {
+    0% {
+      transform: translate(21px, 0.6rem);
+    }
+    50% {
+      transform: translate(21px, -6.8rem);
+    }
+    100% {
+      transform: translate(21px, -15rem);
+    }
+  }
+  .first-page{
+    overflow: auto;
+    height: 100%;
+  }
+  .roadmap{
+    position: relative;
+    width: 600px;
+    height: 1200px;
+  }
+  .roadmap ul li:nth-of-type(2){
+    position: absolute;
+    transform: translate(250px, -230px);
+  }
+  .roadmap ul li:nth-of-type(3){
+    position: absolute;
+    transform: translate(475px, -190px);
+  }
+
+  .roadmap ul li:nth-of-type(4){
+    position: absolute;
+    transform: translate(480px, 100px);
+  }
+  .roadmap ul li:nth-of-type(5){
+    position: absolute;
+    transform: translate(320px, 320px);
+  }
+  .roadmap ul li:nth-of-type(6){
+    position: absolute;
+    transform: translate(190px, 600px);
+  }
+  .roadmap ul li:nth-of-type(7){
+    position: absolute;
+    transform: translate(250px, 890px);
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ .logo {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    z-index: 20;
+  }
+ .main-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-info h2 {
+    position: relative;
+    margin-top: 9rem;
+    transform: translate(60px, 7rem);
+    font-size: 3.5rem;
+    z-index: 20;
+  }
+  .heading-cover {
+    display: none;
+  }
+  .main-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 390px;
+    background-color: rgb(0, 0, 0);
+    transform: translateY(-8.7rem);
+    z-index: 15;
+  }
+  .main-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 340px;
+    background-color: rgb(0, 0, 0);
+    transform: translateY(20.2rem);
+    z-index: 15;
+  }
+  .destinations {
+    display: flex;
+    flex-direction: column;
+    font-size: 3.5rem;
+    gap: 20px;
+    transform: translate(29rem, -6rem);
+    animation-name: mini-roulette;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes mini-roulette {
+    0% {
+      transform: translate(29rem, 3.8rem);
+    }
+    50% {
+      transform: translate(29rem, -6.2rem);
+    }
+    100% {
+      transform: translate(29rem, -15.7rem);
+    }
+  }
+ .first-page{
+    overflow: auto;
+    height: 100%;
+  }
+  .roadmap{
+    position: relative;
+    width: 140%;
+    height: 1200px;
+  }
+  .roadmap ul li:nth-of-type(2){
+    position: absolute;
+    transform: translate(23rem, -13rem);
+  }
+  .roadmap ul li:nth-of-type(3){
+    position: absolute;
+    transform: translate(635px, -220px);
+  }
+
+  .roadmap ul li:nth-of-type(4){
+    position: absolute;
+    transform: translate(830px, 10px);
+  }
+  .roadmap ul li:nth-of-type(5){
+    position: absolute;
+    transform: translate(570px, 280px);
+  }
+  .roadmap ul li:nth-of-type(6){
+    position: absolute;
+    transform: translate(310px, 600px);
+  }
+  .roadmap ul li:nth-of-type(7){
+    position: absolute;
+    transform: translate(430px, 950px);
+  } 
+
+}

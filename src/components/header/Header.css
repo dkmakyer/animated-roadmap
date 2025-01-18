@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid rgb(212, 205, 205);
+    z-index: 10;
+}
+.app-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 200px;
+    margin: 0 50px;
+}
+.app-name a{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.links{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.links a:hover{
+    font-size: 20px;
+}
+a{
+    color: black;
+    text-decoration: none;
+    transition: font-size 0.1s ease;
+}
+.active{
+    color: rgba(202, 8, 228, 0.9);
+    text-decoration: underline;
+    font-size: 20px;
+}

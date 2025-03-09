@@ -27,8 +27,8 @@ const Home = () => {
         visibleItems[visibleItems.length - 1] === index ? classes : newClass
       }`}
     >
-      <div className="mb-[1rem]">
-        <VerifiedIcon className="translate-x-[-37px] translate-y-[1.5rem]" />
+      <div className="mb-[1rem] translate-x-[-37px] translate-y-[-4rem] flex items-center gap-4">
+        <VerifiedIcon/>
         <h3>{date}</h3>
       </div>
       <div
@@ -46,17 +46,13 @@ const Home = () => {
 
   const { scrollYProgress } = useScroll();
 
-  const translateX = useTransform(
-    scrollYProgress,
-    [0.2, 0.4, 1],
-    ["-3rem", "10rem", "-10rem"]
-  );
   const translateY = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ["-9rem", "-9rem", "-20rem"]
+    ["-7rem", "-15rem", "-30rem"]
   );
-  const scale = useTransform(scrollYProgress, [0, 0.5, 0.9], [1, 0.8, 0.7]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.7, 1], [0, 15, 15]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 1], [1, 0.9, 0.2]);
   // const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [1, 0.5, 1]);
 
   useEffect(() => {
@@ -138,12 +134,12 @@ const Home = () => {
           <div className="heading-cover translate-x-[25rem] translate-y-[-15rem]"></div>
         </div>
         <motion.div
-          style={{ translateY, translateX, scale }}
+          style={{ translateY, rotateX, scale}}
           transition={{ ease: "backInOut" }}
-          className="roadmap z-[100] relative h-[1200px] translate-x-[4rem] scale-y-[0] box-border"
+          className="roadmap z-[100] relative h-[800px] box-border"
         >
           <svg
-            className="roadmap-line absolute top-0 left-0 w-full h-[100%]"
+            className="roadmap-line absolute top-0 left-0 w-[100vw] h-[100%]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 4000 800"
             preserveAspectRatio="none"
@@ -156,7 +152,7 @@ const Home = () => {
             />
           </svg>
           <svg
-            className="pseudo-roadmap-line absolute top-0 left-0 w-full h-[100%]"
+            className="pseudo-roadmap-line absolute top-0 left-0 w-[100vw] h-[100%]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 4000 800"
             preserveAspectRatio="none"
@@ -176,8 +172,8 @@ const Home = () => {
               date="2023 -> Q4 2023"
               title="Genesis"
               description="- Learned Vanilla HTML, CSS and JS"
-              classes="translate-y-[2rem] border-[#ffb832] text-customOrange"
-              newClass="translate-y-[5rem]"
+              classes="translate-y-[1rem] border-[#ffb832] text-customOrange"
+              newClass="translate-y-[4.9rem]"
               index={0}
             />
             <RoadmapItem
@@ -185,7 +181,7 @@ const Home = () => {
               title="AWS ReSt@rt Learner"
               description="- Gained Cloud Computing Fundamentals."
               classes="translate-x-[29rem] translate-y-[-16rem] border-[#ffb832] text-customOrange"
-              newClass="translate-x-[29rem] translate-y-[-12rem]"
+              newClass="translate-x-[29rem] translate-y-[-10.3rem]"
               index={1}
             />
             <RoadmapItem
@@ -193,39 +189,39 @@ const Home = () => {
               title="Meta CraftLab Internship"
               description="- Fullstack development with Svelte and SvelteKit."
               classes="translate-x-[55rem] translate-y-[-27rem] border-[#ffb832] text-customOrange"
-              newClass="translate-x-[55rem] translate-y-[-24rem]"
+              newClass="translate-x-[55rem] translate-y-[-22.8rem]"
               index={2}
             />
             <RoadmapItem
               date="Q2 2024"
               title="Personal Development"
               description="- Introduction to React js."
-              classes="translate-x-[60rem] translate-y-[-19rem] border-[#ffb832] text-customOrange"
-              newClass="translate-x-[60rem] translate-y-[-16rem]"
+              classes="translate-x-[73rem] translate-y-[-29rem] border-[#ffb832] text-customOrange"
+              newClass="translate-x-[73rem] translate-y-[-25rem]"
               index={3}
             />
               <RoadmapItem
                 date="Q3 2024"
                 title="Personal Development"
                 description="- Data Structures and Algorithm."
-                classes="translate-x-[45rem] translate-y-[-21rem] border-[#ffb832] text-customOrange"
-                newClass="translate-x-[45rem] translate-y-[-18rem]"
+                classes="translate-x-[48rem] translate-y-[-31rem] border-[#ffb832] text-customOrange"
+                newClass="translate-x-[48rem] translate-y-[-25.5rem]"
                 index={4}
                 />
             <RoadmapItem
               title="Project Based Learning"
               description="- Built a portfolio website."
               date="Q3 2024"
-              classes="translate-x-[24rem] translate-y-[-13rem] border-[#ffb832] text-customOrange"
-              newClass="translate-x-[24rem] translate-y-[-10rem]"
+              classes="translate-x-[27.7rem] translate-y-[-32rem] border-[#ffb832] text-customOrange"
+              newClass="translate-x-[27.7rem] translate-y-[-27rem]"
               index={5}
             />
             <RoadmapItem
               date="Q4 2024"
               title="Project Based Learning"
               description="- Built an E-commerce Website."
-              classes="translate-x-[33rem] translate-y-[-4rem] border-[#ffb832] text-customOrange"
-              newClass="translate-x-[33rem] translate-y-[0.5rem]"
+              classes="translate-x-[37rem] translate-y-[-29rem] border-[#ffb832] text-customOrange"
+              newClass="translate-x-[37rem] translate-y-[-22rem]"
               index={6}
             />
           </ul>
@@ -239,3 +235,4 @@ const Home = () => {
 };
 
 export default Home;
+

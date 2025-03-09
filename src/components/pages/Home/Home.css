@@ -4,10 +4,7 @@
   padding: 0;
 }
 .home-container {
-  overflow-x: hidden;
   word-spacing: 5px;
-  perspective: 10px;
-  will-change: transform;
 }
 .last-page {
   position: relative;
@@ -290,4 +287,9 @@
     transform: translate(430px, 950px);
   } 
 
+}
+
+.first-page {
+  perspective: 200px;
+  perspective-origin: center center;
 }
